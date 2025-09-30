@@ -24,7 +24,7 @@ O código implementa:
 Clone o repositório e instale as dependências:
 
 ```bash
-git clone https://github.com/seu-usuario/bb84-simulador.git
+gh repo clone IsaiasPaulinoSoaresDaSilva/Quantum-Criptography-BB84
 cd bb84-simulador
 
 # ambiente virtual (opcional)
