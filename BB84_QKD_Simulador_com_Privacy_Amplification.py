@@ -3,9 +3,9 @@ Simulador BB84 de Distribuição de Chaves Quânticas (QKD)
 --------------------------------------------------------
 
 Objetivo
-- Simular a geração de uma chave secreta entre Alice e Bob usando o protocolo BB84.
-- Permitir inserir ruído do canal e um atacante (Eve) com intercept-resend.
-- Realizar:
+1- Simular a geração de uma chave secreta entre Alice e Bob usando o protocolo BB84.
+2- Permitir inserir ruído do canal e um atacante (Eve) com intercept-resend.
+Realizar:
   1) Preparação e medição em bases aleatórias (Z/X)
   2) Sifting (descartar posições de bases diferentes)
   3) Estimativa do QBER
@@ -13,14 +13,15 @@ Objetivo
   5) Privacy amplification (reduzir chave com SHAKE-256, aproximando a taxa segura)
 
 Observações
-- Este simulador é educacional. A reconciliação de erros (p.ex. Cascade/LDPC) não está implementada;
-  em vez disso, exemplificamos a etapa de privacidade (privacy amplification) considerando a
+- Este código é resultado de um projeto de pesquisa. A reconciliação de erros (p.ex. Cascade/LDPC) não está implementada;
+  em vez disso, exemplificou-sea etapa de privacidade (privacy amplification) considerando a
   fração de informação potencialmente vazada indicada pelo QBER (limite Devetak–Winter aproximado).
-- Opcionalmente, você pode usar o Qiskit para montar e executar os circuitos qubit-a-qubit;
-  por padrão, usamos uma simulação clássica eficiente que replica estatísticas do BB84.
+- Opcionalmente, é possível usar o Qiskit para montar e executar os circuitos qubit-a-qubit;
+  por padrão, usa-se uma simulação clássica eficiente que replica estatísticas do BB84.
 
 Dependências
 - numpy, hashlib. (Opcional: qiskit)
+- Importante ver o arquivo de requirements
 
 Uso rápido
 ---------
@@ -41,7 +42,7 @@ from typing import Optional, Tuple, Dict
 import numpy as np
 
 try:
-    # Qiskit é opcional. Se não estiver instalado, rodamos o caminho clássico.
+    # Qiskit é opcional. Se não estiver instalado, rodamos pelo caminho clássico.
     from qiskit import QuantumCircuit
     from qiskit_aer import Aer
     _HAS_QISKIT = True
